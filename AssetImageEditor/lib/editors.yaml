@@ -1,0 +1,16 @@
+pixlr:
+    name: pixlr editor
+    class: AssetImageEditor::API::Pixlr
+    provider: <a href="http://pixlr.com/">pixlr.com</a>
+    request: http://pixlr.com/editor/
+    description: 豊富な機能が利用できる強力な画像編集エディタです。
+    terms: <a href="http://pixlr.com/terms_of_service/">http://pixlr.com/terms_of_service/</a>
+    settings: ~
+pixlr_express:
+    name: pixlr express
+    class: AssetImageEditor::API::Pixlr
+    provider: <a href="http://pixlr.com/">pixlr.com</a>
+    request: http://pixlr.com/express/
+    description: 写真のレイアウト、色調補正やエフェクト効果に特化したエディタです。
+    terms: <a href="http://pixlr.com/terms_of_service/">http://pixlr.com/terms_of_service/</a>
+    settings: ~

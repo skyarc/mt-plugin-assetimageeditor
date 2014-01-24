@@ -1,0 +1,37 @@
+id: AssetImageEditor
+key: AssetImageEditor
+name: AssetImageEditor
+author_name: SKYARC System Co.,Ltd.
+author_link: http://www.skyarc.co.jp/
+version: 1.00
+l10n_class: AssetImageEditor::L10N
+description: <MT_TRANS phrase="You can edit the image on the MovableType using the API of image editing service">
+settings:
+    -
+       - service
+       - default: 1
+         scope: blog
+    -
+       - service
+       - default: 0
+         scope: system 
+    
+system_config_template: 
+    code: $AssetImageEditor::AssetImageEditor::system_config_template
+blog_config_template:
+    code: $AssetImageEditor::AssetImageEditor::blog_config_template
+
+callbacks:
+    save_config_filter.AssetImageEditor: $AssetImageEditor::AssetImageEditor::save_config_filter
+
+applications:
+    cms:
+        methods:
+            asset_image_edit_saver: $AssetImageEditor::AssetImageEditor::save
+        page_actions:
+            asset:
+                asset_image_editor_startup:
+                    label: Image Editing
+                    handler: $AssetImageEditor::AssetImageEditor::edit
+                    permission: edit_assets
+                    condition: $AssetImageEditor::AssetImageEditor::condition
