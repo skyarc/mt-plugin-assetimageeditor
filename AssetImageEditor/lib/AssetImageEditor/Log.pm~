@@ -40,8 +40,7 @@ sub _logging {
 
     my $author_id = 1;
     my $author = $app->can('user') ? $app->user : 0;
-    #my $log = $app->model('log')->new;
-    my $log = new MT::Log();
+    my $log = $app->model('log')->new;
 
     $log->message ($message);
     $log->ip ($ENV{REMOTE_ADDR});
